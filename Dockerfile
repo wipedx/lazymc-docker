@@ -9,9 +9,10 @@ ARG ARCHITECTURE=x64
 ENV ARCHITECTURE $ARCHITECTURE
 ENV MC_CONTAINER_NAME=minecraft
 
-COPY ./lazymc.sh .
 RUN mkdir /lazymc
 WORKDIR /lazymc
+
+COPY ./lazymc.sh /lazymc.sh
 
 CMD ["sh", "/lazymc.sh"]
 
