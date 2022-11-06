@@ -1,9 +1,10 @@
 FROM rust:alpine
 
-RUN apk apk update &&\
-    apk add --no-cache libc6-compat musl-dev
 
-RUN cargo install -f --git https://github.com/timvisee/lazymc
+# hadolint ignore=DL3018
+RUN apk apk update &&\
+    apk add --no-cache libc6-compat musl-dev &&\
+    cargo install -f --git https://github.com/timvisee/lazymc
 
 ARG ARCHITECTURE=x64
 ENV ARCHITECTURE $ARCHITECTURE
