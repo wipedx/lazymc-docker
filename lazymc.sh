@@ -12,7 +12,6 @@ else
 fi
 
 # Update start command to run docker instead
-sed -i '/command = /s/".*"/"docker start '$MC_CONTAINER_NAME'"/' /lazymc/lazymc.toml
-cat /lazymc/lazymc.toml | grep command
+sed -i '/command = /s/".*"/"docker start '"$MC_CONTAINER_NAME"'"/' /lazymc/lazymc.toml
 
 lazymc
